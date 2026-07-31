@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anteneh Barbershop | Addis Ababa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        offblack: '#111111',
+                        offwhite: '#f4f0ec',
+                        vibrant: '#ff5c00'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ff5c00; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e05200; 
+        }
+
+        /* Reveal Animation Classes */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Video Overlay Gradient */
+        .video-gradient {
+            background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(17,17,17,0.3) 50%, rgba(17,17,17,0.7) 100%);
+        }
+
+        /* Link Underline Hover Effect */
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+        }
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #ff5c00;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body class="selection:bg-vibrant selection:text-white">
+
+    <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 py-6 px-6 md:px-12 flex justify-between items-center bg-transparent">
+        <a href="#" class="text-2xl font-black tracking-tighter uppercase z-50 relative hover:text-vibrant transition-colors">
+            Anteneh.
+        </a>
+        
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-10 text-sm font-semibold tracking-widest uppercase">
+            <a href="#info" class="hover-underline-animation hover:text-vibrant transition-colors">Info</a>
+            <a href="#barbers" class="hover-underline-animation hover:text-vibrant transition-colors">Barbers</a>
+            <a href="#contact" class="hover-underline-animation hover:text-vibrant transition-colors">Contact</a>
+        </nav>
+
+        <!-- Book Now / Mobile Toggle -->
+        <div class="flex items-center gap-6 z-50">
+            <a href="#book" class="hidden md:inline-block bg-vibrant border border-vibrant text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black hover:border-white transition-colors duration-300 shadow-lg shadow-vibrant/20">
+                Book Now
+            </a>
+            <!-- Simple Mobile Menu Icon (CSS Only logic for visual) -->
+            <button class="md:hidden flex flex-col gap-[5px] cursor-pointer group">
+                <span class="w-8 h-[2px] bg-white group-hover:bg-vibrant transition-colors"></span>
+                <span class="w-8 h-[2px] bg-white group-hover:bg-vibrant transition-colors"></span>
+                <span class="w-6 h-[2px] bg-white group-hover:bg-vibrant transition-colors self-end"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+            <!-- Fallback image in case video doesn't load -->
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070')] bg-cover bg-center opacity-70"></div>
+            
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-80">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-barber-cutting-hair-with-scissors-41710-large.mp4" type="video/mp4">
+            </video>
+            
+            <div class="absolute inset-0 video-gradient z-10"></div>
+
+            <div class="relative z-20 text-center px-4 flex flex-col items-center mt-20">
+                <span class="text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-6 reveal-up text-vibrant">Established 2026</span>
+                <h1 class="text-5xl md:text-7xl lg:text-9xl font-black uppercase tracking-tighter leading-none mb-10 reveal-up" style="transition-delay: 100ms;">
+                    Anteneh<br>Barbershop
+                </h1>
+                <a href="#book" class="reveal-up inline-block bg-vibrant text-white px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors duration-300 shadow-xl shadow-vibrant/20" style="transition-delay: 200ms;">
+                    Book Appointment
+                </a>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 reveal-up" style="transition-delay: 400ms;">
+                <span class="text-[10px] uppercase tracking-widest text-vibrant">Scroll</span>
+                <div class="w-[1px] h-12 bg-white/30 relative overflow-hidden">
+                    <div class="w-full h-1/2 bg-vibrant absolute top-0 animate-[shimmer_2s_infinite]"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="info" class="py-32 md:py-48 px-6 md:px-12 w-full bg-offwhite text-black transition-colors duration-500">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight leading-[1.1] mb-12 reveal-up">
+                    More than a barbershop – <br class="hidden lg:block">we are a <span class="text-vibrant">movement</span>. <br>A meeting place where style, community, and inspiration go hand in hand.
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-gray-700 text-lg md:text-xl font-medium leading-relaxed reveal-up">
+                    <p>
+                        Since our inception, we have worked with the idea of changing the barber industry by raising quality and giving the new generation of barbers opportunities to develop and take their place.
+                    </p>
+                    <p>
+                        Today we have a salon in the heart of Addis Ababa and a team of talented barbers. Our goal is to define and shape modern barber culture – with high quality, creative entrepreneurship, and unique experiences for our clients.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="barbers" class="py-20 bg-offblack">
+            <div class="px-6 md:px-12 max-w-[1600px] mx-auto mb-16 flex flex-col md:flex-row justify-between items-end gap-8 reveal-up">
+                <div class="max-w-2xl">
+                    <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6">Barbers</h2>
+                    <p class="text-gray-400 text-lg md:text-xl font-light">
+                        Book to experience first-class service – A haircut created with precision, feeling, and creativity. Choose your barber below.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full border-t border-b border-gray-800">
+                
+                <!-- Barber 1 -->
+                <div class="group relative aspect-[3/4] overflow-hidden border-r border-gray-800 last:border-r-0 cursor-pointer reveal-up">
+                    <img src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?q=80&w=1000" alt="Anteneh" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="text-3xl font-bold uppercase tracking-tight mb-1 group-hover:text-vibrant transition-colors">Anteneh</h3>
+                        <p class="text-gray-300 text-sm tracking-widest uppercase font-semibold">Master Barber</p>
+                    </div>
+                </div>
+
+                <!-- Barber 2 -->
+                <div class="group relative aspect-[3/4] overflow-hidden border-r border-gray-800 last:border-r-0 cursor-pointer reveal-up" style="transition-delay: 100ms;">
+                    <img src="https://images.unsplash.com/photo-1593014164319-3540ce80a84e?q=80&w=1000" alt="Dawit" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="text-3xl font-bold uppercase tracking-tight mb-1 group-hover:text-vibrant transition-colors">Dawit</h3>
+                        <p class="text-gray-300 text-sm tracking-widest uppercase font-semibold">Senior Barber</p>
+                    </div>
+                </div>
+
+                <!-- Barber 3 -->
+                <div class="group relative aspect-[3/4] overflow-hidden border-r border-gray-800 last:border-r-0 cursor-pointer reveal-up" style="transition-delay: 200ms;">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1000" alt="Bereket" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="text-3xl font-bold uppercase tracking-tight mb-1 group-hover:text-vibrant transition-colors">Bereket</h3>
+                        <p class="text-gray-300 text-sm tracking-widest uppercase font-semibold">Stylist</p>
+                    </div>
+                </div>
+
+                <!-- Barber 4 -->
+                <div class="group relative aspect-[3/4] overflow-hidden border-r border-gray-800 last:border-r-0 cursor-pointer reveal-up" style="transition-delay: 300ms;">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1000" alt="Natnael" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="text-3xl font-bold uppercase tracking-tight mb-1 group-hover:text-vibrant transition-colors">Natnael</h3>
+                        <p class="text-gray-300 text-sm tracking-widest uppercase font-semibold">Barber</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="book" class="py-32 text-center px-6 bg-vibrant reveal-up">
+            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 text-white">Ready for a Freshup?</h2>
+            <a href="#" class="inline-block bg-white text-vibrant px-12 py-5 text-sm font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors duration-300 shadow-xl">
+                Book Your Spot Now
+            </a>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-offblack pt-20 pb-10 px-6 md:px-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 reveal-up">
+            
+            <div>
+                <h4 class="text-xl font-bold uppercase mb-6 tracking-tight">Location</h4>
+                <p class="text-gray-400 font-light leading-relaxed">
+                    Bole Medhanialem<br>
+                    Next to Edna Mall<br>
+                    Addis Ababa, Ethiopia
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-xl font-bold uppercase mb-6 tracking-tight">Contact</h4>
+                <p class="text-gray-400 font-light leading-relaxed flex flex-col gap-2">
+                    <a href="mailto:info@antenehbarbershop.com" class="hover:text-white transition-colors">info@antenehbarbershop.com</a>
+                    <a href="tel:+251911234567" class="hover:text-white transition-colors">+251 911 234 567</a>
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-xl font-bold uppercase mb-6 tracking-tight">Hours</h4>
+                <ul class="text-gray-400 font-light leading-relaxed">
+                    <li class="flex justify-between border-b border-gray-800 py-2">
+                        <span>Mon - Fri</span> <span>10:00 - 19:00</span>
+                    </li>
+                    <li class="flex justify-between border-b border-gray-800 py-2">
+                        <span>Saturday</span> <span>10:00 - 16:00</span>
+                    </li>
+                    <li class="flex justify-between py-2">
+                        <span>Sunday</span> <span>Closed</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest reveal-up border-t border-gray-900 pt-8">
+            <p>&copy; 2026 Anteneh Barbershop.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors">Instagram</a>
+                <a href="#" class="hover:text-white transition-colors">Facebook</a>
+                <a href="#" class="hover:text-white transition-colors">TikTok</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar Background Change on Scroll
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-offblack/95', 'backdrop-blur-md', 'py-4', 'shadow-lg', 'border-b', 'border-white/10');
+                    navbar.classList.remove('bg-transparent', 'py-6');
+                } else {
+                    navbar.classList.add('bg-transparent', 'py-6');
+                    navbar.classList.remove('bg-offblack/95', 'backdrop-blur-md', 'py-4', 'shadow-lg', 'border-b', 'border-white/10');
+                }
+            });
+
+            // Intersection Observer for Reveal Animations
+            const revealElements = document.querySelectorAll('.reveal-up');
+            
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.1, // Trigger when 10% of element is visible
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        });
+
+        // Add custom keyframes for the scroll indicator shimmer
+        tailwind.config.theme.extend.keyframes = {
+            shimmer: {
+                '0%': { transform: 'translateY(-100%)' },
+                '100%': { transform: 'translateY(200%)' }
+            }
+        }
+    </script>
+</body>
+</html>
