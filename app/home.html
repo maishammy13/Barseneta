@@ -1,93 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anteneh Barbershop | Addis Ababa</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        offblack: '#111111',
-                        offwhite: '#f4f0ec',
-                        vibrant: '#ff5c00'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #111;
-            color: #fff;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Barseneta | Addis Ababa</title>
+        <link rel="icon" href="../assets/shuaibPicture1.png" type="image/png">
+        <script src="https://cdn.tailwindcss.com"></script>
+        
+        <script src="js/home.js"></script>
+        <link rel="stylesheet" href="css/home.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    </head>
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #111; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #ff5c00; 
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #e05200; 
-        }
-
-        /* Reveal Animation Classes */
-        .reveal-up {
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal-up.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Video Overlay Gradient */
-        .video-gradient {
-            background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(17,17,17,0.3) 50%, rgba(17,17,17,0.7) 100%);
-        }
-
-        /* Link Underline Hover Effect */
-        .hover-underline-animation {
-            display: inline-block;
-            position: relative;
-        }
-        .hover-underline-animation::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #ff5c00;
-            transform-origin: bottom right;
-            transition: transform 0.25s ease-out;
-        }
-        .hover-underline-animation:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-    </style>
-</head>
 <body class="selection:bg-vibrant selection:text-white">
 
     <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 py-6 px-6 md:px-12 flex justify-between items-center bg-transparent">
         <a href="#" class="text-2xl font-black tracking-tighter uppercase z-50 relative hover:text-vibrant transition-colors">
-            Anteneh.
+            Barsenet.a
         </a>
         
         <!-- Desktop Nav -->
@@ -114,10 +44,10 @@
     <main>
         <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
             <!-- Fallback image in case video doesn't load -->
-            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070')] bg-cover bg-center opacity-70"></div>
+            <!-- <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070')] bg-cover bg-center opacity-70 z-0"></div> -->
             
-            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-80">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-barber-cutting-hair-with-scissors-41710-large.mp4" type="video/mp4">
+            <video autoplay loop muted playsinline preload="auto" poster="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070" class="absolute inset-0 w-full h-full object-cover z-0 opacity-80">
+                <source src="../assets/header_video.mp4" type="video/mp4">
             </video>
             
             <div class="absolute inset-0 video-gradient z-10"></div>
@@ -125,7 +55,7 @@
             <div class="relative z-20 text-center px-4 flex flex-col items-center mt-20">
                 <span class="text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-6 reveal-up text-vibrant">Established 2026</span>
                 <h1 class="text-5xl md:text-7xl lg:text-9xl font-black uppercase tracking-tighter leading-none mb-10 reveal-up" style="transition-delay: 100ms;">
-                    Anteneh<br>Barbershop
+                    Barsenet.a<br>Barbershop
                 </h1>
                 <a href="#book" class="reveal-up inline-block bg-vibrant text-white px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors duration-300 shadow-xl shadow-vibrant/20" style="transition-delay: 200ms;">
                     Book Appointment
@@ -266,47 +196,5 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Navbar Background Change on Scroll
-            const navbar = document.getElementById('navbar');
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('bg-offblack/95', 'backdrop-blur-md', 'py-4', 'shadow-lg', 'border-b', 'border-white/10');
-                    navbar.classList.remove('bg-transparent', 'py-6');
-                } else {
-                    navbar.classList.add('bg-transparent', 'py-6');
-                    navbar.classList.remove('bg-offblack/95', 'backdrop-blur-md', 'py-4', 'shadow-lg', 'border-b', 'border-white/10');
-                }
-            });
-
-            // Intersection Observer for Reveal Animations
-            const revealElements = document.querySelectorAll('.reveal-up');
-            
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target); // Only animate once
-                    }
-                });
-            }, {
-                root: null,
-                threshold: 0.1, // Trigger when 10% of element is visible
-                rootMargin: "0px 0px -50px 0px"
-            });
-
-            revealElements.forEach(el => revealObserver.observe(el));
-        });
-
-        // Add custom keyframes for the scroll indicator shimmer
-        tailwind.config.theme.extend.keyframes = {
-            shimmer: {
-                '0%': { transform: 'translateY(-100%)' },
-                '100%': { transform: 'translateY(200%)' }
-            }
-        }
-    </script>
 </body>
 </html>

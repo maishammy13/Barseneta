@@ -1,0 +1,58 @@
+body {
+    background-color: #111;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #111; 
+}
+::-webkit-scrollbar-thumb {
+    background: #ff5c00; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #e05200; 
+}
+
+/* Reveal Animation Classes */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Video Overlay Gradient */
+.video-gradient {
+    background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(17,17,17,0.3) 50%, rgba(17,17,17,0.7) 100%);
+}
+
+/* Link Underline Hover Effect */
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff5c00;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
