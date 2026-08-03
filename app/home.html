@@ -1,200 +1,249 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Barseneta | Addis Ababa</title>
-        <link rel="icon" href="../assets/shuaibPicture1.png" type="image/png">
-        <script src="https://cdn.tailwindcss.com"></script>
-        
-        <script src="js/home.js"></script>
-        <link rel="stylesheet" href="css/home.css">
-        
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
-    </head>
-
-<body class="selection:bg-vibrant selection:text-white">
-
-    <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 py-6 px-6 md:px-12 flex justify-between items-center bg-transparent">
-        <a href="#" class="text-2xl font-black tracking-tighter uppercase z-50 relative hover:text-vibrant transition-colors">
-            Barsenet.a
-        </a>
-        
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex gap-10 text-sm font-semibold tracking-widest uppercase">
-            <a href="#info" class="hover-underline-animation hover:text-vibrant transition-colors">Info</a>
-            <a href="#barbers" class="hover-underline-animation hover:text-vibrant transition-colors">Barbers</a>
-            <a href="#contact" class="hover-underline-animation hover:text-vibrant transition-colors">Contact</a>
-        </nav>
-
-        <!-- Book Now / Mobile Toggle -->
-        <div class="flex items-center gap-6 z-50">
-            <a href="#book" class="hidden md:inline-block bg-vibrant border border-vibrant text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black hover:border-white transition-colors duration-300 shadow-lg shadow-vibrant/20">
-                Book Now
-            </a>
-            <!-- Simple Mobile Menu Icon (CSS Only logic for visual) -->
-            <button class="md:hidden flex flex-col gap-[5px] cursor-pointer group">
-                <span class="w-8 h-[2px] bg-white group-hover:bg-vibrant transition-colors"></span>
-                <span class="w-8 h-[2px] bg-white group-hover:bg-vibrant transition-colors"></span>
-                <span class="w-6 h-[2px] bg-white group-hover:bg-vibrant transition-colors self-end"></span>
-            </button>
-        </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Barseneta Barbershop — precision cuts, grooming and good energy in Addis Ababa."
+    />
+    <title>Barseneta Barbershop | Addis Ababa</title>
+    <link rel="icon" href="../assets/shuaibPicture1.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/home.css" />
+    <script src="js/home.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header" id="navbar">
+      <a class="brand" href="#top" aria-label="Barseneta home"
+        ><span>Barseneta</span><i aria-hidden="true">.</i></a
+      >
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#about">Our story</a><a href="#services">Services</a
+        ><a href="#barbers">Barbers</a><a href="#contact">Visit us</a>
+      </nav>
+      <a class="button button--gold header-book" href="#book"
+        >Book now <span aria-hidden="true">↗</span></a
+      >
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span></span><span></span>
+      </button>
+      <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile navigation">
+        <a href="#about">Our story</a><a href="#services">Services</a
+        ><a href="#barbers">Barbers</a><a href="#contact">Visit us</a
+        ><a class="button button--gold" href="#book"
+          >Book now <span aria-hidden="true">↗</span></a
+        >
+      </nav>
     </header>
 
-    <main>
-        <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-            <!-- Fallback image in case video doesn't load -->
-            <!-- <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070')] bg-cover bg-center opacity-70 z-0"></div> -->
-            
-            <video autoplay loop muted playsinline preload="auto" poster="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070" class="absolute inset-0 w-full h-full object-cover z-0 opacity-80">
-                <source src="../assets/header_video.mp4" type="video/mp4">
-            </video>
-            
-            <div class="absolute inset-0 video-gradient z-10"></div>
+    <main id="main-content">
+      <section class="hero" id="top" aria-label="Barseneta Barbershop">
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="../assets/BARSENETA.jpeg"
+        >
+          <source src="../assets/header_video.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow reveal">Addis Ababa · Ethiopia</p>
+          <h1 class="reveal">Your look.<br /><em>Your rules.</em></h1>
+          <p class="hero-copy reveal">
+            A modern barbershop for precise cuts, sharp finishes, and the ritual
+            of taking care of yourself.
+          </p>
+          <div class="hero-actions reveal">
+            <a class="button button--gold" href="#book"
+              >Reserve a chair <span aria-hidden="true">↗</span></a
+            ><a class="text-link" href="#services"
+              >Explore services <span aria-hidden="true">↓</span></a
+            >
+          </div>
+        </div>
+        <div class="hero-meta">
+          <span>Est. 2026</span><span>Scroll to discover</span>
+        </div>
+      </section>
 
-            <div class="relative z-20 text-center px-4 flex flex-col items-center mt-20">
-                <span class="text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-6 reveal-up text-vibrant">Established 2026</span>
-                <h1 class="text-5xl md:text-7xl lg:text-9xl font-black uppercase tracking-tighter leading-none mb-10 reveal-up" style="transition-delay: 100ms;">
-                    Barsenet.a<br>Barbershop
-                </h1>
-                <a href="#book" class="reveal-up inline-block bg-vibrant text-white px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors duration-300 shadow-xl shadow-vibrant/20" style="transition-delay: 200ms;">
-                    Book Appointment
-                </a>
+      <section class="intro section" id="about">
+        <div class="section-label reveal">
+          <span>01</span><span>Our story</span>
+        </div>
+        <div class="intro-grid">
+          <h2 class="display reveal">Good grooming is <em>personal.</em></h2>
+          <div class="intro-copy reveal">
+            <p>
+              Barseneta is a place to reset, connect, and leave feeling like
+              yourself — only sharper. We pair considered technique with an
+              easy, welcoming atmosphere.
+            </p>
+            <a class="text-link text-link--dark" href="#contact"
+              >Find the shop <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="services section section--dark" id="services">
+        <div class="section-label reveal">
+          <span>02</span><span>The menu</span>
+        </div>
+        <div class="services-heading">
+          <h2 class="display reveal">Made for <em>your</em> chair.</h2>
+          <p class="reveal">
+            Choose the service that fits today. Not sure what you need? Your
+            barber will help you find the right finish.
+          </p>
+        </div>
+        <div class="service-list">
+          <article class="service reveal">
+            <span class="service-number">01</span>
+            <h3>Signature cut</h3>
+            <p>
+              Consultation, cut, wash and finish tailored to your texture and
+              routine.
+            </p>
+            <span class="service-time">60 min</span>
+          </article>
+          <article class="service reveal">
+            <span class="service-number">02</span>
+            <h3>Fresh fade</h3>
+            <p>
+              Clean taper or skin fade with detail work around the hairline and
+              neck.
+            </p>
+            <span class="service-time">45 min</span>
+          </article>
+          <article class="service reveal">
+            <span class="service-number">03</span>
+            <h3>Beard ritual</h3>
+            <p>
+              Shape, hot towel treatment and a smooth finish for a confident
+              profile.
+            </p>
+            <span class="service-time">30 min</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="barbers section" id="barbers">
+        <div class="section-label reveal">
+          <span>03</span><span>The team</span>
+        </div>
+        <div class="barber-heading">
+          <h2 class="display reveal">Meet the <em>craftsmen.</em></h2>
+          <a class="text-link text-link--dark reveal" href="#book"
+            >Choose your barber <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="barber-grid">
+          <article class="barber-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&w=900&q=85"
+              alt="Anteneh, master barber"
+              loading="lazy"
+            />
+            <div>
+              <span>Master barber</span>
+              <h3>Anteneh</h3>
             </div>
-            
-            <!-- Scroll Indicator -->
-            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 reveal-up" style="transition-delay: 400ms;">
-                <span class="text-[10px] uppercase tracking-widest text-vibrant">Scroll</span>
-                <div class="w-[1px] h-12 bg-white/30 relative overflow-hidden">
-                    <div class="w-full h-1/2 bg-vibrant absolute top-0 animate-[shimmer_2s_infinite]"></div>
-                </div>
+          </article>
+          <article class="barber-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1593014164319-3540ce80a84e?auto=format&fit=crop&w=900&q=85"
+              alt="Dawit, senior barber"
+              loading="lazy"
+            />
+            <div>
+              <span>Senior barber</span>
+              <h3>Dawit</h3>
             </div>
-        </section>
-
-        <section id="info" class="py-32 md:py-48 px-6 md:px-12 w-full bg-offwhite text-black transition-colors duration-500">
-            <div class="max-w-7xl mx-auto">
-                <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight leading-[1.1] mb-12 reveal-up">
-                    More than a barbershop – <br class="hidden lg:block">we are a <span class="text-vibrant">movement</span>. <br>A meeting place where style, community, and inspiration go hand in hand.
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-gray-700 text-lg md:text-xl font-medium leading-relaxed reveal-up">
-                    <p>
-                        Since our inception, we have worked with the idea of changing the barber industry by raising quality and giving the new generation of barbers opportunities to develop and take their place.
-                    </p>
-                    <p>
-                        Today we have a salon in the heart of Addis Ababa and a team of talented barbers. Our goal is to define and shape modern barber culture – with high quality, creative entrepreneurship, and unique experiences for our clients.
-                    </p>
-                </div>
+          </article>
+          <article class="barber-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=900&q=85"
+              alt="Bereket, stylist"
+              loading="lazy"
+            />
+            <div>
+              <span>Stylist</span>
+              <h3>Bereket</h3>
             </div>
-        </section>
+          </article>
+        </div>
+      </section>
 
-        <section id="barbers" class="py-20 bg-offblack">
-            <div class="px-6 md:px-12 max-w-[1600px] mx-auto mb-16 flex flex-col md:flex-row justify-between items-end gap-8 reveal-up">
-                <div class="max-w-2xl">
-                    <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6">Barbers</h2>
-                    <p class="text-gray-400 text-lg md:text-xl font-light">
-                        Book to experience first-class service – A haircut created with precision, feeling, and creativity. Choose your barber below.
-                    </p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full border-t border-b border-gray-800">
-                
-                <!-- Barber 1 -->
-                <div class="group relative aspect-[3/4] overflow-hidden border-r border-gray-800 last:border-r-0 cursor-pointer reveal-up">
-                    <img src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?q=80&w=1000" alt="Anteneh" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
-                    <div class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                        <h3 class="text-3xl font-bold uppercase tracking-tight mb-1 group-hover:text-vibrant transition-colors">Anteneh</h3>
-                        <p class="text-gray-300 text-sm tracking-widest uppercase font-semibold">Master Barber</p>
-                    </div>
-                </div>
-
-                <!-- Barber 2 -->
-                <div class="group relative aspect-[3/4] overflow-hidden border-r border-gray-800 last:border-r-0 cursor-pointer reveal-up" style="transition-delay: 100ms;">
-                    <img src="https://images.unsplash.com/photo-1593014164319-3540ce80a84e?q=80&w=1000" alt="Dawit" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
-                    <div class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                        <h3 class="text-3xl font-bold uppercase tracking-tight mb-1 group-hover:text-vibrant transition-colors">Dawit</h3>
-                        <p class="text-gray-300 text-sm tracking-widest uppercase font-semibold">Senior Barber</p>
-                    </div>
-                </div>
-
-                <!-- Barber 3 -->
-                <div class="group relative aspect-[3/4] overflow-hidden border-r border-gray-800 last:border-r-0 cursor-pointer reveal-up" style="transition-delay: 200ms;">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1000" alt="Bereket" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
-                    <div class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                        <h3 class="text-3xl font-bold uppercase tracking-tight mb-1 group-hover:text-vibrant transition-colors">Bereket</h3>
-                        <p class="text-gray-300 text-sm tracking-widest uppercase font-semibold">Stylist</p>
-                    </div>
-                </div>
-
-                <!-- Barber 4 -->
-                <div class="group relative aspect-[3/4] overflow-hidden border-r border-gray-800 last:border-r-0 cursor-pointer reveal-up" style="transition-delay: 300ms;">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1000" alt="Natnael" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
-                    <div class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                        <h3 class="text-3xl font-bold uppercase tracking-tight mb-1 group-hover:text-vibrant transition-colors">Natnael</h3>
-                        <p class="text-gray-300 text-sm tracking-widest uppercase font-semibold">Barber</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="book" class="py-32 text-center px-6 bg-vibrant reveal-up">
-            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 text-white">Ready for a Freshup?</h2>
-            <a href="#" class="inline-block bg-white text-vibrant px-12 py-5 text-sm font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors duration-300 shadow-xl">
-                Book Your Spot Now
-            </a>
-        </section>
+      <section class="booking" id="book">
+        <div class="booking-content reveal">
+          <p class="eyebrow">Your chair is waiting</p>
+          <h2 class="display">Ready when <em>you are.</em></h2>
+          <p>Book an appointment and make time for a better cut.</p>
+          <a class="button button--light" href="tel:+251911234567"
+            >Call to book <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <img
+          src="../assets/BARSENETA.jpeg"
+          alt="Barseneta gold scissors logo"
+          loading="lazy"
+        />
+      </section>
     </main>
 
-    <footer id="contact" class="bg-offblack pt-20 pb-10 px-6 md:px-12 border-t border-gray-900">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 reveal-up">
-            
-            <div>
-                <h4 class="text-xl font-bold uppercase mb-6 tracking-tight">Location</h4>
-                <p class="text-gray-400 font-light leading-relaxed">
-                    Bole Medhanialem<br>
-                    Next to Edna Mall<br>
-                    Addis Ababa, Ethiopia
-                </p>
-            </div>
-
-            <div>
-                <h4 class="text-xl font-bold uppercase mb-6 tracking-tight">Contact</h4>
-                <p class="text-gray-400 font-light leading-relaxed flex flex-col gap-2">
-                    <a href="mailto:info@antenehbarbershop.com" class="hover:text-white transition-colors">info@antenehbarbershop.com</a>
-                    <a href="tel:+251911234567" class="hover:text-white transition-colors">+251 911 234 567</a>
-                </p>
-            </div>
-
-            <div>
-                <h4 class="text-xl font-bold uppercase mb-6 tracking-tight">Hours</h4>
-                <ul class="text-gray-400 font-light leading-relaxed">
-                    <li class="flex justify-between border-b border-gray-800 py-2">
-                        <span>Mon - Fri</span> <span>10:00 - 19:00</span>
-                    </li>
-                    <li class="flex justify-between border-b border-gray-800 py-2">
-                        <span>Saturday</span> <span>10:00 - 16:00</span>
-                    </li>
-                    <li class="flex justify-between py-2">
-                        <span>Sunday</span> <span>Closed</span>
-                    </li>
-                </ul>
-            </div>
+    <footer class="footer" id="contact">
+      <div class="footer-top">
+        <div>
+          <a class="brand brand--footer" href="#top"
+            >Barseneta<i aria-hidden="true">.</i></a
+          >
+          <p>Precision cuts. Good energy.<br />Made in Addis.</p>
         </div>
-
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest reveal-up border-t border-gray-900 pt-8">
-            <p>&copy; 2026 Anteneh Barbershop.</p>
-            <div class="flex gap-6 mt-4 md:mt-0">
-                <a href="#" class="hover:text-white transition-colors">Instagram</a>
-                <a href="#" class="hover:text-white transition-colors">Facebook</a>
-                <a href="#" class="hover:text-white transition-colors">TikTok</a>
-            </div>
+        <div>
+          <p class="footer-label">Find us</p>
+          <address>
+            Bole Medhanialem<br />Next to Edna Mall<br />Addis Ababa, Ethiopia
+          </address>
         </div>
+        <div>
+          <p class="footer-label">Hours</p>
+          <p>
+            Mon – Fri: 10:00 – 19:00<br />Saturday: 10:00 – 16:00<br />Sunday:
+            Closed
+          </p>
+        </div>
+        <div>
+          <p class="footer-label">Contact</p>
+          <a href="tel:+251911234567">+251 911 234 567</a
+          ><a href="mailto:hello@barseneta.com">hello@barseneta.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Barseneta Barbershop</span>
+        <div>
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"
+            >Instagram</a
+          ><a href="https://www.tiktok.com/" target="_blank" rel="noreferrer"
+            >TikTok</a
+          >
+        </div>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>

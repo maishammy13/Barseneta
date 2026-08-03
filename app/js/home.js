@@ -1,52 +1,41 @@
-tailwind.config = {
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-                offblack: '#111111',
-                offwhite: '#f4f0ec',
-                vibrant: '#ff5c00'
-            }
-        }
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.getElementById("navbar");
+  const toggle = document.querySelector(".menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const closeMenu = () => {
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation menu");
+    mobileMenu.classList.remove("open");
+    document.body.style.overflow = "";
+  };
+  const syncHeader = () =>
+    header.classList.toggle("scrolled", window.scrollY > 24);
+  syncHeader();
+  window.addEventListener("scroll", syncHeader, { passive: true });
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    if (isOpen) closeMenu();
+    else {
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close navigation menu");
+      mobileMenu.classList.add("open");
+      document.body.style.overflow = "hidden";
     }
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.getElementById('navbar');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('bg-offblack/95', 'backdrop-blur-md', 'py-4', 'shadow-lg', 'border-b', 'border-white/10');
-            navbar.classList.remove('bg-transparent', 'py-6');
-        } else {
-            navbar.classList.add('bg-transparent', 'py-6');
-            navbar.classList.remove('bg-offblack/95', 'backdrop-blur-md', 'py-4', 'shadow-lg', 'border-b', 'border-white/10');
+  });
+  mobileMenu
+    .querySelectorAll("a")
+    .forEach((link) => link.addEventListener("click", closeMenu));
+  const observer = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
         }
-    });
-
-    const revealElements = document.querySelectorAll('.reveal-up');
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        root: null,
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-
-    revealElements.forEach(el => revealObserver.observe(el));
+      }),
+    { threshold: 0.12 },
+  );
+  document
+    .querySelectorAll(".reveal")
+    .forEach((element) => observer.observe(element));
 });
-
-tailwind.config.theme.extend.keyframes = {
-    shimmer: {
-        '0%': { transform: 'translateY(-100%)' },
-        '100%': { transform: 'translateY(200%)' }
-    }
-};
