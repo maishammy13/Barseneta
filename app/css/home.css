@@ -4,7 +4,12 @@
   --paper: #f4f1e9;
   --gold: #d6ad53;
   --gold-light: #ecd188;
+  --terracotta: #b8613c;
+  --forest: #3f5a44;
   --line: rgba(244, 241, 233, 0.18);
+  --strip-width: clamp(22px, 3.4vw, 42px);
+  --pattern-kente: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='120'%3E%3Crect width='60' height='120' fill='%23141412'/%3E%3Crect width='60' height='28' fill='%23d6ad53'/%3E%3Cpolygon points='0,28 60,28 30,52' fill='%23141412'/%3E%3Crect y='52' width='60' height='16' fill='%23b8613c'/%3E%3Crect y='68' width='60' height='12' fill='%23141412'/%3E%3Cpolygon points='0,80 30,80 0,104' fill='%23d6ad53'/%3E%3Cpolygon points='60,80 30,80 60,104' fill='%23d6ad53'/%3E%3Crect y='104' width='60' height='16' fill='%233f5a44'/%3E%3C/svg%3E");
+  --pattern-adinkra: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='144'%3E%3Crect width='72' height='144' fill='%23141412'/%3E%3Ccircle cx='36' cy='36' r='3.2' fill='%23d6ad53'/%3E%3Cpath d='M36 60a20 20 0 1 0 0.02 0' stroke='%23d6ad53' stroke-width='3.2' fill='none'/%3E%3Cpath d='M16 60q20-28 40 0' stroke='%23d6ad53' stroke-width='3.2' fill='none'/%3E%3Crect x='28' y='104' width='16' height='16' fill='none' stroke='%23b8613c' stroke-width='2.8' transform='rotate(45 36 112)'/%3E%3C/svg%3E");
   --body: "Space Grotesk", sans-serif;
   --display: "Playfair Display", Georgia, serif;
   --mono: "DM Mono", monospace;
@@ -601,6 +606,50 @@ button:focus-visible {
   }
   .hero h1 {
     font-size: 3.4rem;
+  }
+}
+.strip-kente,
+.strip-adinkra {
+  position: relative;
+}
+.strip-kente::before,
+.strip-kente::after,
+.strip-adinkra::before,
+.strip-adinkra::after {
+  bottom: 0;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: var(--strip-width);
+  background-position: top left;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  z-index: 1;
+}
+.strip-kente::before,
+.strip-kente::after {
+  background-image: var(--pattern-kente);
+}
+.strip-adinkra::before,
+.strip-adinkra::after {
+  background-image: var(--pattern-adinkra);
+}
+.strip-kente::before,
+.strip-adinkra::before {
+  left: 0;
+}
+.strip-kente::after,
+.strip-adinkra::after {
+  background-position: top right;
+  right: 0;
+}
+@media (max-width: 640px) {
+  .strip-kente::before,
+  .strip-kente::after,
+  .strip-adinkra::before,
+  .strip-adinkra::after {
+    display: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {
